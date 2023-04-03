@@ -9,5 +9,3 @@ def print_log(log):
     for trace in log:
         for event in trace:
            print(event['concept:name'])
-
-    
