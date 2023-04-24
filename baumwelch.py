@@ -37,29 +37,55 @@ class HMM:
                 beta[t, i] = np.sum(A[i,:] * B[:,O[t+1]] * beta[t+1,:])
 
         return beta
+
+    def gamma(self, alpha, beta):
+        return (alpha*beta)/np.sum(alpha[-1])
+
+    def epsilon(self, alpha, beta, O):
+        T = len(O)
+        epsilon = np.zeros(T-1, len(A), len(A))
+
+        for t in range(T-1):
+            for i in range(len(A)):
+                for j in range(len(A)):
+                    epsilon[t, i, j] = alpha[t,i]*A[i,j]*beta[t+1,j]*B[j,O[t+1]]
+            epsilon[t, i] /= np.sum(epsilon[t,i])
+
+    def update(self, O):
+        alpha = forward(O)
+        beta = backward(O)
+        gamma = gamma(alpha, beta)
+        epsilon = epsilon(alpha, beta, O)
+
+        self.pi = gamma[0]
+        self.A = epsilon/gamma
+
+        
+
+
     def baumWelch(self, O):
         alpha = self.forward(O)
         beta = self.backward(O)
 
 
-if __name__ == "__main__":
-    n = 3
-    k = 2
-    A = np.array([[0.7, 0.2, 0.1],
-                  [0.3, 0.5, 0.2],
-                  [0.1, 0.3, 0.6]])
-    B = np.array([[0.9, 0.1],
-                  [0.2, 0.8],
-                  [0.4, 0.6]])
-    pi = np.array([0.6, 0.2, 0.2])
+#if __name__ == "__main__":
+n = 3
+k = 2
+A = np.array([[0.7, 0.2, 0.1],
+                [0.3, 0.5, 0.2],
+                [0.1, 0.3, 0.6]])
+B = np.array([[0.9, 0.1],
+                [0.2, 0.8],
+                [0.4, 0.6]])
+pi = np.array([0.6, 0.2, 0.2])
 
-    hmm = HMM(n,k)
-    hmm.A = A
-    hmm.B = B
-    hmm.pi = pi
+hmm = HMM(n,k)
+hmm.A = A
+hmm.B = B
+hmm.pi = pi
 
-    O = np.array([0,1,0,1,0])
-    print("forward")
-    print(hmm.forward(O))
-    print("backward")
-    print(hmm.backward(O))
+O = np.array([0,1,0,1,0])
+print("forward")
+print(hmm.forward(O))
+print("backward")
+print(hmm.backward(O))
