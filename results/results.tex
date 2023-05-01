@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage[style=numeric]{biblatex}
+\addbibresource{bib.bib}
+
+
+\begin{document}
+Training set with 13 observations, 2-17 states, 100 iterations (no random $\pi$???)
+\begin{figure}[h]\centering
+\begin{tikzpicture}
+  \begin{axis}
+    \addplot[color=red] table[col sep=comma, x index=0, y index=1] {nostates.csv};
+  \end{axis}
+\end{tikzpicture}
+\caption{LogLikelihood of models run with $n$ numbers of states}\label{lap}
+\end{figure}
+
+%\end{multicols}
+\printbibliography
+\end{document}
