@@ -12,7 +12,7 @@ parameters = {variant.value.Parameters.TIMESTAMP_SORT: True}
 #discovery.print_log(log)
 
 # discover a model in the dot format
-dfa = discovery.dfa_discovery(sys.argv[1])
+dfa = discovery.dfa_discovery(sys.argv[1], float(sys.argv[2]))
 
 
 # visualize the model

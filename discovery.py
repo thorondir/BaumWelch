@@ -2,9 +2,7 @@ from mimetypes import init
 from models import DFA
 import jajapy
 
-epsilon = 0.0001
-
-def dfa_discovery(modelname):
+def dfa_discovery(modelname, epsilon):
     model = jajapy.loadHMM(modelname)
     states = set(range(1,model.nb_states+1))
     transitions = set()
