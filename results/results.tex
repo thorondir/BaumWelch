@@ -13,7 +13,7 @@ Training set with 13 observations, 2-17 states, 100 iterations (no random $\pi$?
 \begin{figure}[h]\centering
 \begin{tikzpicture}
   \begin{axis}[xtick={0,50,100,150,200,256}]
-    \addplot[color=red] table[col sep=comma, x index=0, y index=1] {100its_test_set.csv};
+    \addplot[color=red] table[col sep=comma, x index=0, y index=1] {testnolog.csv};
   \end{axis}
 \end{tikzpicture}
 \caption{LogLikelihood of models run with $n$ numbers of states}\label{lap}
@@ -26,7 +26,7 @@ Training set of first 10 (shuffled), 82 events, 76 unique logs
     \addlegendentry{Test Set}
     \addplot[color=blue] table[col sep=comma, x index=0, y index=1] {10traces_10traces.csv};
     \addlegendentry{10 Training Traces}
-    \addplot[color=black] coordinates {(82,-160)(82,0)};
+    \addplot[color=black] coordinates {(123,0)(123,0.07)};
     %\addplot[color=black] coordinates {(76,-160)(76,0)};
   \end{axis}
 \end{tikzpicture}
