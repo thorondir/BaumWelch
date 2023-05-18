@@ -13,7 +13,7 @@ resultsSameData = dict()
 models = dict()
 modelresults = dict()
 
-for i in range(1,129):
+for i in range(1,257):
     models[i] = jajapy.HMM_random(i, list(states), random_initial_state=True)
 
 
