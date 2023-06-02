@@ -1,6 +1,9 @@
 # Ying Stokes HMMs in Process Mining project repo
+## Installing Dependencies
+`pip install -r requirements.txt`
 
----
+
+## Running tests
 
 Please run:
 
