@@ -1,4 +1,4 @@
-import jajapy, pm4py, random, pandas
+import jajapy, pm4py, random, pandas, numpy
 import sys
 from sys import argv
 baum_welch = jajapy.BW()
@@ -18,6 +18,12 @@ if (len(argv) > 3):
 else:
     traces = [list(t[1]['lifecycle:transition']) for t in logs.groupby('case:concept:name')]
     states = logs['lifecycle:transition'].unique()
+
+states = numpy.append(states, ['start', 'end'])
+
+for trace in traces:
+    trace.insert(0, 'start')
+    trace.append('end')
 
 random.shuffle(traces)
 
