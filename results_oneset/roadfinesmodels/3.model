@@ -1,0 +1,6 @@
+HMM
+['Create Fine', 'Send Fine', 'Insert Fine Notification', 'Add penalty', 'Send for Credit Collection', 'Payment', 'Insert Date Appeal to Prefecture', 'Send Appeal to Prefecture', 'Receive Result Appeal from Prefecture', 'Notify Result Appeal to Offender', 'Appeal to Judge', 'start', 'end']
+[[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0], [0.0, 0.18520490854364438, 0.1422337791867776, 0.1422337791867776, 0.10510445794076265, 0.13821041195433414, 0.0074589915756852546, 0.0073752827399504875, 0.0017792580191283594, 0.0015958109961351453, 0.000988476677293533, 0.0, 0.26781484317951093]]
+HMM_random_3_states
+[0.0, 1.0, 0.0]
+[[0.0, 0.0, 1.0], [1.0, 0.0, 0.0], [4.903851655299076e-56, 8.22919025943019e-56, 1.0]]

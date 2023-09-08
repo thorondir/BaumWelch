@@ -1,6 +1,8 @@
-import csv
+# imports a list of traces from a json file
+
+import json
 
 traces = []
 
-with open('randtraces.csv', 'r') as f:
-    traces = list(csv.reader(f))
+with open('results_oneset/sepsisTestSet.json', 'r') as f:
+    traces = json.load(f)

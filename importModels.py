@@ -1,8 +1,13 @@
-import jajapy
+# imports all models from a directory where models are files named
+# [no. of states].model
+
+import jajapy, os
 
 models = dict()
 
-for i in range(1,18):
-    models[i] = jajapy.loadHMM('models/model' + str(i))
-for i in [32,64,128,256]:
-    models[i] = jajapy.loadHMM('models/model' + str(i))
+dir = os.fsencode('results_oneset/sepsismodels/')
+
+for f in os.listdir(dir):
+    fn = os.fsdecode(f)
+    if fn.endswith('.model'):
+        models[int(fn.removesuffix('.model'))] = jajapy.loadHMM(os.fsdecode(dir) + '/' + fn)
