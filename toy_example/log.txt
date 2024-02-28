@@ -7,15 +7,15 @@
 161
 ['start', 'In Progress', 'In Progress', 'In Call', 'end']
 1749
-['start', 'In Progress', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Assigned', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait - User', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Assigned', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Awaiting Assignment', 'Awaiting Assignment', 'In Progress', 'Resolved', 'Closed', 'end']
+['start', 'In Progress', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Assigned', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Assigned', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Awaiting Assignment', 'Awaiting Assignment', 'In Progress', 'Resolved', 'Closed', 'end']
 1
-['start', 'In Progress', 'In Progress', 'Wait - Vendor', 'Resolved', 'Closed', 'end']
+['start', 'In Progress', 'In Progress', 'Wait', 'Resolved', 'Closed', 'end']
 16
 ['start', 'Awaiting Assignment', 'In Progress', 'Resolved', 'Closed', 'end']
 300
-['start', 'In Progress', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait - User', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait - User', 'Resolved', 'Closed', 'end']
+['start', 'In Progress', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait', 'Resolved', 'Closed', 'end']
 3
 ['start', 'Awaiting Assignment', 'Awaiting Assignment', 'In Progress', 'Resolved', 'Closed', 'end']
 44
-['start', 'In Progress', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait - Implementation', 'Wait - User', 'Resolved', 'Closed', 'end']
+['start', 'In Progress', 'In Progress', 'Awaiting Assignment', 'In Progress', 'Wait', 'Wait', 'Resolved', 'Closed', 'end']
 4

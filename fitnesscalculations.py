@@ -13,10 +13,18 @@ def getSetLoglikelihood(sequences: Set):
         logLikelihood += log(sequences.times[seq]/totalTimes)
     return logLikelihood
 
+def smoothHMM(hmm):
+    eps = 1e-6
+    hmm.output += eps
+
 # calculates the average likelihood in a test set from the forward algorithm
-def likelihood(hmm, sequences: Set):
+def logLikelihood_smooth(hmm, sequences: Set):
     sequences_sorted = sequences.sequences[:]
     sequences_sorted.sort()
+
+    num_sequences = len(sequences_sorted)
+    alpha = 1e-6
+
     likelihood = 0.0
     alpha_matrix = hmm._initAlphaMatrix(len(sequences_sorted[0]))
     for seq in range(len(sequences_sorted)):
@@ -30,10 +38,17 @@ def likelihood(hmm, sequences: Set):
                             common += 1
 
             alpha_matrix = hmm._updateAlphaMatrix(sequence,common,alpha_matrix)
+            """
+            likelihood += log(alpha_matrix[-1].sum() + alpha) * times
+    return likelihood / sum(sequences.times) + (alpha * sequences.times)
+            """
             if alpha_matrix[-1].sum() > 0:
-                    likelihood += alpha_matrix[-1].sum() * times
+                    likelihood += log(alpha_matrix[-1].sum()) * times
+            else:
+                print('impossible!!')
+            likelihood += alpha
 
-    return likelihood / sum(sequences.times)
+    return likelihood / sum(sequences.times) + (alpha * num_sequences)
 
 
 # calculates the KL-divergence between the set likelihood (occurrences) and the
