@@ -25,3 +25,23 @@ def train_dfg_from_traces(traces):
     df = convertTracesTopm4py(traces)
 
     return pm4py.discover_dfg(df)
+
+
+def filter_dfg(dfg, epsilon):
+    outcounts = dict()
+    for edge in dfg[0]:
+        if edge[0] in outcounts:
+            outcounts[edge[0]] += dfg[0][edge]
+        else:
+            outcounts[edge[0]] = dfg[0][edge]
+
+    new_dict = dict()
+
+    for edge in dfg[0]:
+        if dfg[0][edge]/outcounts[edge[0]] >= epsilon:
+            new_dict[edge] = dfg[0][edge]
+        else:
+            new_dict[edge] = 1
+
+    return (new_dict, dfg[1], dfg[2])
+
